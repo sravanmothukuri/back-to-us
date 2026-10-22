@@ -1,0 +1,32 @@
+/* Container for floating symbols */
+.floating-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+/* Floating symbol styling */
+.floating-symbol {
+  position: absolute;
+  top: 100%; /* Start below the visible screen */
+  font-size: 2.5rem; /* Size of the symbols */
+  color: #fb86c0; /* Pink color for the hearts */
+  animation: floatUp linear infinite; /* Float animation */
+}
+
+/* Keyframes for the float animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg); /* Start at the bottom with no rotation */
+    opacity: 1; /* Fully visible */
+  }
+  100% {
+    transform: translateY(-120vh) rotate(360deg); /* Float out of the top while rotating */
+    opacity: 0; /* Fade out */
+  }
+}

@@ -1,0 +1,125 @@
+/* The original birthday card styles (Jan 2025), scoped under .bday-root
+   so they don't leak into the rest of Back to Us. */
+.bday-root {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow: hidden;
+  background-color: #f8e2e7;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.bday-root .App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8e2e7;
+  overflow: hidden;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.bday-root .balloon-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.bday-root .balloon {
+  position: absolute;
+  bottom: -10%;
+  width: 60px;
+  animation: bdayBalloonUp 8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes bdayBalloonUp {
+  0% { transform: translateY(0) scale(0.9); opacity: 0.9; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
+}
+
+.bday-root .balloon:nth-child(1) { left: 10%; animation-delay: 0s; }
+.bday-root .balloon:nth-child(2) { left: 20%; animation-delay: 1s; }
+.bday-root .balloon:nth-child(3) { left: 30%; animation-delay: 1.5s; }
+.bday-root .balloon:nth-child(4) { left: 40%; animation-delay: 0.8s; }
+.bday-root .balloon:nth-child(5) { left: 50%; animation-delay: 0.5s; }
+.bday-root .balloon:nth-child(6) { left: 60%; animation-delay: 1.3s; }
+.bday-root .balloon:nth-child(7) { left: 70%; animation-delay: 0.6s; }
+.bday-root .balloon:nth-child(8) { left: 80%; animation-delay: 1.1s; }
+.bday-root .balloon:nth-child(9) { left: 15%; animation-delay: 2s; }
+.bday-root .balloon:nth-child(10) { left: 35%; animation-delay: 0.2s; }
+.bday-root .balloon:nth-child(11) { left: 25%; animation-delay: 0.2s; }
+.bday-root .balloon:nth-child(12) { left: 55%; animation-delay: 0.2s; }
+.bday-root .balloon:nth-child(13) { left: 65%; animation-delay: 0.2s; }
+.bday-root .balloon:nth-child(14) { left: 75%; animation-delay: 0.2s; }
+.bday-root .balloon:nth-child(15) { left: 85%; animation-delay: 0.2s; }
+
+.bday-root button {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Lexend", sans-serif;
+  transition: transform 0.2s ease-in-out;
+}
+
+.bday-root button:hover {
+  transform: scale(1.1);
+}
+
+.bday-root .fade-out { animation: bdayFadeOut 1s ease-in-out forwards; }
+@keyframes bdayFadeOut { 0% { opacity: 1; } 100% { opacity: 0; } }
+
+.bday-root .fade-in { animation: bdayFadeIn 1s ease-in-out forwards; }
+@keyframes bdayFadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+
+.bday-root video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Added for Back to Us: the way out of the card */
+.bday-root .bday-exit {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 60;
+  background: rgba(255, 255, 255, 0.85);
+  color: #4a2a35;
+  font-size: 0.85rem;
+  padding: 8px 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+.bday-root .bday-hint {
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 60;
+  margin: 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+  font-family: "Lexend", sans-serif;
+  font-size: 0.75rem;
+  color: #7a4a5a;
+  pointer-events: none;
+}

@@ -1,0 +1,28 @@
+.letter-sheet {
+  background: var(--paper);
+  margin: 20px -4px 0;
+  padding: 36px 26px 40px;
+  box-shadow: var(--shadow);
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  line-height: 1.85;
+  color: var(--ink);
+  position: relative;
+}
+.letter-sheet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 14px;
+  border-left: 1px solid rgba(180, 86, 111, 0.18);
+}
+.letter-sheet p { margin: 0 0 1.1em; }
+.letter-greeting { font-family: var(--hand); font-size: 1.45rem; color: var(--rose-ink); }
+.letter-closing { margin-top: 1.6em !important; font-style: italic; }
+.letter-sign { font-family: var(--hand); font-size: 1.5rem; color: var(--rose-ink); text-align: right; }
+.letter-after { margin-top: 18px; text-align: center; }
+
+@media (min-width: 640px) {
+  .letter-sheet { padding: 48px 56px 52px; margin: 24px 0 0; }
+}

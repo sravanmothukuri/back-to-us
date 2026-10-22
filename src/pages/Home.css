@@ -1,0 +1,127 @@
+.hearts { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+.hearts span {
+  position: absolute;
+  bottom: -2rem;
+  color: #e79bb5;
+  opacity: 0;
+  animation: heartUp linear infinite;
+}
+@keyframes heartUp {
+  0% { transform: translateY(0) rotate(0); opacity: 0; }
+  15% { opacity: 0.55; }
+  100% { transform: translateY(-110vh) rotate(40deg); opacity: 0; }
+}
+
+.ritual {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: var(--blush);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  cursor: pointer;
+}
+.ritual-card {
+  position: relative;
+  z-index: 1;
+  width: min(520px, 100%);
+  background: #fff;
+  border-radius: 14px;
+  padding: 36px 28px 28px;
+  box-shadow: 0 10px 40px rgba(142, 58, 82, 0.15);
+  text-align: center;
+  font-family: var(--ui);
+  font-size: clamp(1.15rem, 4.5vw, 1.45rem);
+  font-weight: 400;
+  color: #333;
+  min-height: 210px;
+  display: grid;
+  align-content: center;
+  gap: 18px;
+}
+.ritual-card .spark { font-size: 2rem; }
+.ritual-card p { margin: 0; animation: ritualIn 0.8s ease both; }
+@keyframes ritualIn { from { opacity: 0; transform: translateY(6px); } }
+.ritual-hint {
+  position: fixed;
+  bottom: 18px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+.ritual-skip { position: fixed; top: 14px; right: 14px; z-index: 31; }
+.ritual-dots { display: flex; gap: 6px; justify-content: center; }
+.ritual-dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--blush-deep); }
+.ritual-dots i.on { background: var(--rose); }
+
+.home-hero { text-align: center; padding: 28px 0 8px; position: relative; z-index: 1; }
+.home-hero h1 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(3rem, 14vw, 4.6rem);
+  line-height: 1;
+  margin: 0;
+  color: var(--plum);
+  letter-spacing: -0.02em;
+}
+.home-hero .hand { color: var(--rose-ink); font-size: 1.3rem; margin-top: 8px; }
+.home-photo { display: grid; place-items: center; margin: 32px 0 28px; }
+.home-photo .polaroid { max-width: 420px; }
+.home-photo .polaroid img { aspect-ratio: 16 / 10; object-position: 40% 30%; }
+.home-intro { font-family: var(--serif); font-size: 1.2rem; line-height: 1.7; color: var(--ink); }
+
+.film { margin: 32px auto 8px; max-width: 340px; text-align: center; }
+.film figcaption { color: var(--rose-ink); font-size: 1.15rem; margin-bottom: 10px; }
+.film video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: var(--plum);
+  border: 8px solid #fff;
+  box-shadow: var(--shadow);
+  transform: rotate(0.8deg);
+  display: block;
+}
+
+.mini-line {
+  list-style: none;
+  padding: 6px 0 0;
+  margin: 28px 0;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.mini-line li {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  padding: 14px 18px 0 0;
+  border-top: 1px dashed var(--rose);
+  position: relative;
+  min-width: 128px;
+}
+.mini-line li::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--rose);
+}
+.mini-line li.hard::before { background: var(--plum); }
+.mini-line .d { font-family: var(--hand); color: var(--rose-ink); font-size: 0.95rem; }
+.mini-line .t { font-size: 0.88rem; color: var(--ink-soft); }
+
+.shortcuts { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin: 28px 0; }
+
+.next-up {
+  border-left: 3px solid var(--rose);
+  padding: 10px 14px;
+  background: rgba(255, 250, 244, 0.7);
+  margin: 24px 0 0;
+}
+.process-note { text-align: center; margin: 40px 0 8px; }

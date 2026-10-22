@@ -1,0 +1,79 @@
+.jar-stage { display: grid; gap: 22px; justify-items: center; margin-top: 8px; }
+
+.jar {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 0;
+}
+.jar-lid {
+  width: 104px;
+  height: 18px;
+  border-radius: 6px 6px 2px 2px;
+  background: #c9a27a;
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.12);
+}
+.jar-body {
+  position: relative;
+  width: 150px;
+  height: 170px;
+  margin-top: -12px;
+  border-radius: 22px 22px 34px 34px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.8), var(--shadow);
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+.jar:hover .jar-body { transform: rotate(-2deg); }
+.jar-body i {
+  position: absolute;
+  left: var(--x);
+  top: calc(20% + var(--y) * 0.75);
+  width: 44px;
+  height: 16px;
+  background: #fff7e8;
+  border: 1px solid rgba(180, 86, 111, 0.3);
+  transform: rotate(var(--r));
+  border-radius: 2px;
+}
+.jar-body i:nth-child(3n) { background: #fbe0e7; }
+.jar-body i:nth-child(4n) { background: #f3ead9; }
+.jar-cta {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  font-family: var(--ui);
+  color: var(--rose-ink);
+  font-size: 0.95rem;
+}
+
+.slip {
+  width: min(460px, 100%);
+  background: #fffaf0;
+  padding: 22px 22px 14px;
+  box-shadow: var(--shadow);
+  transform: rotate(-1deg);
+  animation: unfold 0.45s ease both;
+  /* torn top edge */
+  clip-path: polygon(0 4px, 6% 0, 13% 3px, 21% 0, 30% 4px, 38% 1px, 47% 4px, 55% 0, 64% 3px, 72% 0, 81% 4px, 90% 1px, 100% 3px, 100% 100%, 0 100%);
+}
+@keyframes unfold { from { opacity: 0; transform: rotate(-1deg) scaleY(0.7); } }
+.slip-cat { font-size: 0.78rem; color: var(--muted); text-transform: lowercase; }
+.slip-text { font-family: var(--hand); font-size: 1.4rem; line-height: 1.5; margin: 8px 0 10px; color: var(--ink); }
+
+.fav-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.fav {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: var(--paper);
+  padding: 12px 14px;
+  font-family: var(--hand);
+  font-size: 1.05rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}

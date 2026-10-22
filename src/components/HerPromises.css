@@ -1,0 +1,141 @@
+.her-promises {
+  margin: 48px -16px 0;
+  padding: 36px 16px 32px;
+  background: var(--blush);
+  box-shadow: 0 0 0 100vmax var(--blush);
+  clip-path: inset(0 -100vmax);
+}
+.her-intro h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 6vw, 2.1rem);
+  line-height: 1.15;
+  color: var(--plum);
+  margin: 2px 0 10px;
+}
+.her-intro p { color: var(--ink-soft); margin: 0 0 20px; }
+
+.her-grid { display: grid; gap: 18px; }
+
+.her-card {
+  position: relative;
+  background: #fffaf3;
+  padding: 18px 20px 16px;
+  box-shadow: var(--shadow);
+  border-left: 3px dashed rgba(180, 86, 111, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.her-card:nth-child(odd) { transform: rotate(-0.4deg); }
+.her-card:nth-child(even) { transform: rotate(0.5deg); }
+.her-card.chosen {
+  border-left: 3px solid var(--rose);
+  background:
+    radial-gradient(circle at 100% 0, rgba(248, 226, 231, 0.9), transparent 55%),
+    #fffaf3;
+}
+
+.her-head { display: flex; align-items: baseline; gap: 10px; }
+.her-card h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin: 0 0 6px;
+  color: var(--plum);
+}
+.both {
+  font-size: 0.95rem;
+  color: var(--rose-ink);
+  border-bottom: 1px dashed var(--rose);
+  line-height: 1.2;
+}
+.her-text {
+  font-family: var(--hand);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 4px 0 10px;
+  color: var(--ink);
+}
+.his-line {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  border-top: 1px dashed var(--line);
+  padding-top: 8px;
+  margin: 0 0 12px;
+}
+.his-line span { font-family: var(--hand); color: var(--rose-ink); }
+
+.signed { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.signed .sig { font-size: 1.35rem; color: var(--rose-ink); line-height: 1; }
+
+/* the one pinky promise */
+.pinky-wrap { margin-top: 44px; }
+.pinky-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.8rem;
+  color: var(--plum);
+  margin: 2px 0 16px;
+}
+.why-note {
+  background: #fffdf8;
+  padding: 22px 22px 14px;
+  box-shadow: var(--shadow);
+  transform: rotate(-0.6deg);
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 26px;
+  position: relative;
+}
+.why-note::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 28px;
+  width: 80px;
+  height: 22px;
+  background: var(--tape);
+  transform: rotate(-4deg);
+}
+.why-note p { margin: 0 0 0.9em; }
+.why-sign { text-align: right; font-size: 1.3rem; color: var(--rose-ink); }
+.her-card.pinky {
+  transform: none;
+  border-left: none;
+  border: 1.5px dashed var(--rose);
+  padding: 22px;
+}
+.her-card.pinky.chosen { border-style: solid; }
+.her-card.pinky h4 { font-size: 1.4rem; }
+
+/* wax seal */
+.seal {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #c25b78, #8e3a52 60%, #6e2a3f);
+  box-shadow:
+    0 0 0 3px rgba(142, 58, 82, 0.25),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.25),
+    0 3px 8px rgba(110, 42, 63, 0.35);
+  animation: press 0.5s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+}
+.seal span {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 235, 240, 0.45);
+  color: #fde9ee;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+}
+@keyframes press {
+  from { transform: scale(1.6) rotate(-20deg); opacity: 0; }
+}

@@ -1,0 +1,77 @@
+.timeline { list-style: none; margin: 24px 0 0; padding: 0; position: relative; }
+
+.moment {
+  position: relative;
+  padding: 28px 0 28px 28px;
+}
+.moment::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 0;
+  bottom: 0;
+  border-left: 1px dashed rgba(180, 86, 111, 0.45);
+}
+.moment::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 36px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--rose);
+  box-shadow: 0 0 0 4px var(--blush);
+}
+
+/* the hard chapter: full-bleed quiet band, no pink */
+.moment.hard {
+  background: var(--hard-bg);
+  box-shadow: 0 0 0 100vmax var(--hard-bg);
+  clip-path: inset(0 -100vmax);
+}
+.moment.hard::after { background: var(--plum); box-shadow: 0 0 0 4px var(--hard-bg); }
+.moment.hard::before { border-color: rgba(74, 35, 56, 0.3); }
+.moment.hard .when { color: var(--plum); }
+
+.moment.now::after { background: #d98a5f; }
+
+.when { font-family: var(--hand); color: var(--rose-ink); font-size: 1.05rem; }
+.when .approx { font-size: 0.85rem; color: var(--muted); margin-left: 6px; }
+.moment h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.55rem;
+  line-height: 1.2;
+  margin: 2px 0 10px;
+  color: var(--plum);
+}
+.moment p.body { margin: 0; font-size: 1.02rem; }
+.moment .margin-note { margin-top: 12px; }
+.moment-photos { display: flex; flex-wrap: wrap; gap: 22px; margin: 24px 0 8px 6px; }
+.moment-photos .polaroid { max-width: 240px; }
+.moment.featured .moment-photos .polaroid { max-width: 330px; }
+.moment.featured h2 { font-size: 1.9rem; font-style: italic; }
+.her-ask {
+  display: block;
+  width: fit-content;
+  margin-top: 12px;
+  color: var(--rose-ink);
+  font-size: 1.05rem;
+  text-decoration: none;
+  border-bottom: 1px dashed var(--rose);
+}
+.moment-link { margin-top: 14px; display: inline-block; }
+
+.months {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 22px 6px 14px;
+  margin: 18px 0 0 -6px;
+  scroll-snap-type: x mandatory;
+}
+.months .polaroid { flex: 0 0 150px; scroll-snap-align: center; padding: 7px 7px 0; }
+.months .polaroid::before { width: 50px; height: 16px; top: -8px; }
+.months.strip .polaroid { flex-basis: 190px; }
+.months .polaroid figcaption { font-size: 0.85rem; padding: 6px 2px 8px; min-height: 0; }

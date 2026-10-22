@@ -1,0 +1,82 @@
+.tabs {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  margin: 20px -16px 0;
+  padding: 0 16px;
+  scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar { display: none; }
+.tab {
+  flex: 0 0 auto;
+  border: none;
+  background: transparent;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+}
+.tab[aria-selected="true"] { background: var(--paper); color: var(--plum); font-weight: 500; }
+.play-panel { border-radius: 0 4px 4px 4px; }
+.play-panel > .dates { display: grid; gap: 16px; }
+.play-panel .date-card { box-shadow: none; border: 1px solid var(--line); }
+.date-card p { margin: 8px 0; }
+.date-card .small { display: inline-flex; gap: 4px; align-items: center; }
+
+.game { display: grid; gap: 8px; }
+.result { font-size: 1.3rem; color: var(--rose-ink); text-align: center; margin: 8px 0; }
+.empty { color: var(--muted); font-style: italic; }
+
+.wyr { display: grid; gap: 12px; position: relative; margin-top: 10px; }
+.wyr-opt {
+  border: 1px solid var(--line);
+  background: #fffdfb;
+  padding: 22px 18px;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.wyr-opt[aria-pressed="true"] { background: var(--plum); color: #fff7f9; }
+.wyr-or {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--paper);
+  padding: 0 10px;
+  color: var(--rose-ink);
+}
+
+.twenty-count { text-align: center; color: var(--ink-soft); }
+.twenty-count .big { font-family: var(--serif); font-size: 2.6rem; color: var(--plum); display: block; line-height: 1; }
+.twenty-log { font-size: 0.9rem; color: var(--ink-soft); padding-left: 1.4em; }
+
+.month-options { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.month-options .chip.right { background: #2f6f4f; color: #fff; border-color: #2f6f4f; }
+.month-options .chip.wrong { background: var(--hard-bg); text-decoration: line-through; }
+.month-options .chip:disabled { opacity: 0.45; cursor: default; }
+
+.tonight { text-align: center; margin: 10px 0; box-shadow: none; border: 1px dashed var(--rose); }
+.tonight h3 { font-size: 1.5rem; font-style: italic; }
+.tonight .row { justify-content: center; }
+.movie-list { list-style: none; padding: 0; margin: 12px 0; display: grid; gap: 6px; }
+.movie-list li { border-bottom: 1px dashed var(--line); padding: 6px 0; display: grid; gap: 6px; }
+.movie-top { display: flex; align-items: center; gap: 8px; }
+.movie-top > span:first-child { flex: 1; font-family: var(--serif); font-size: 1.05rem; }
+.movie-list li.watched .movie-top > span:first-child { color: var(--muted); }
+.after-movie summary { cursor: pointer; color: var(--rose-ink); font-size: 0.9rem; }
+
+.talk-q {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  line-height: 1.4;
+  margin: 18px 0;
+  color: var(--plum);
+  min-height: 3em;
+}
+.closer { margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--line); }
+.closer ul { padding-left: 1.2em; font-family: var(--serif); }
+.closer li { margin: 6px 0; }

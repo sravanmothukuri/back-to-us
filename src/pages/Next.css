@@ -1,0 +1,27 @@
+.visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; }
+.visit-grid .field { margin: 10px 0; }
+.check { display: flex; gap: 10px; align-items: flex-start; margin: 10px 0; font-size: 0.95rem; cursor: pointer; }
+.check input { margin-top: 5px; accent-color: var(--plum); width: 16px; height: 16px; flex: 0 0 auto; }
+.check input:checked + span { color: var(--muted); }
+.before { border-top: 1px dashed var(--line); margin-top: 16px; padding-top: 12px; }
+.before .hand { color: var(--rose-ink); font-size: 1.1rem; }
+.before .check input:checked + span { text-decoration: line-through; }
+
+.wish { list-style: none; padding: 0; margin: 12px 0; }
+.wish li { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--line); padding: 4px 0; }
+.wish .hand { font-size: 1.1rem; }
+
+.closing {
+  margin: 56px 0 0;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  line-height: 1.75;
+  color: var(--plum);
+}
+.closing p { margin: 0 0 1em; }
+.closing .sign { color: var(--rose-ink); font-size: 1.4rem; }
+
+@media (max-width: 420px) {
+  .visit-grid { grid-template-columns: 1fr; }
+}
